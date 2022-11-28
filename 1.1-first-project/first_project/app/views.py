@@ -24,9 +24,6 @@ def time_view(request):
 
 
 def workdir_view(request):
-    # по аналогии с `time_view`, напишите код,
-    # который возвращает список файлов в рабочей 
-    # директории    
     base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     listdir = sorted(os.listdir(base_path))
     msg = f'{listdir}'
