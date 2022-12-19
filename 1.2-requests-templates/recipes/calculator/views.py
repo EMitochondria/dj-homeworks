@@ -1,8 +1,9 @@
 from django.shortcuts import render
 
+DEFUALT_SERVINGS_COUNT = 1
 
 def omlet_view(request):
-    servings = int(request.GET.get('servings', 1))
+    servings = int(request.GET.get('servings', DEFUALT_SERVINGS_COUNT))
     context = {
         'recipe': {
             'яйца, шт': 2 * servings,
@@ -14,7 +15,7 @@ def omlet_view(request):
 
 
 def pasta_view(request):
-    servings = int(request.GET.get('servings', 1))
+    servings = int(request.GET.get('servings', DEFUALT_SERVINGS_COUNT))
     context = {
         'recipe': {
             'макароны, г': 0.3 * servings,
@@ -25,7 +26,7 @@ def pasta_view(request):
 
 
 def buter_view(request):
-    servings = int(request.GET.get('servings', 1))
+    servings = int(request.GET.get('servings', DEFUALT_SERVINGS_COUNT))
     context = {
         'recipe': {
             'хлеб, ломтик': 1 * servings,
@@ -38,7 +39,7 @@ def buter_view(request):
 
 
 def soup_lukovyi_view(request):
-    servings = int(request.GET.get('servings', 1))
+    servings = int(request.GET.get('servings', DEFUALT_SERVINGS_COUNT))
     context = {
         'recipe': {
             'хлеб, ломтик': 1 * servings,
