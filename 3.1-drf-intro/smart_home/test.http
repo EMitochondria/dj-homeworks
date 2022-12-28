@@ -1,0 +1,10 @@
+GET http://127.0.0.1:8000/api/demo/
+
+###
+
+POST http://127.0.0.1:8000/api/demo/
+
+###
+
+GET http://127.0.0.1:8000/api/sensor/1/
+
