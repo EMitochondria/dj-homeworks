@@ -4,7 +4,7 @@ from students.models import Course, Student
 from model_bakery import baker
 from rest_framework import status
 from django.urls import reverse
-
+from django_testing.settings import MAX_STUDENTS_PER_COURSE
 
 @pytest.fixture
 def client():
@@ -114,4 +114,4 @@ def test_max_student_count_on_course(client, course_factory, student_factory):
         list_students_id.append(student.id)
     for course in courses:
         response = client.patch(reverse('courses-detail', args=[course.id]), {'name': course.name, "students": list_students_id})
-        assert response.status_code == status.HTTP_400_BAD_REQUEST  
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
